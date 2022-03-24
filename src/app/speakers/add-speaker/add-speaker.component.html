@@ -1,0 +1,26 @@
+ <div class="container" >
+  <form #signup="ngForm">
+  <label>id :</label>
+  <input type="text" name="id" [(ngModel)]="newspeaker._id" #id="ngModel" required>
+  <span *ngIf="id.errors?.['required']">is required</span>
+  <label>fullName :</label>
+  <input type="text" name="fullname" [(ngModel)]="newspeaker.fullName" >
+
+  <label>email :</label>
+  <input type="text" name="email" [(ngModel)]="newspeaker.email">
+  <label>address :</label>
+  <input type="text" name="address" [(ngModel)]="newspeaker.address">
+  <label >password :</label>
+  <input type="password" name="password" [(ngModel)]="newspeaker.password" >
+
+  <label >image :</label>
+  <input type="file" name="image" [(ngModel)]="newspeaker.image">
+  <label >role :</label>
+  <select [(ngModel)]="newspeaker.role" name="role">
+    <option value="speaker" >speaker</option>
+    <option value="admin" >admin</option>
+  </select>
+  <button class="btn btn-info" (click)="add()">add</button>
+</form>
+
+</div>

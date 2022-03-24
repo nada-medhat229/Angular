@@ -1,0 +1,47 @@
+<!-- <app-add-speaker></app-add-speaker> -->
+<div class="container">
+  <div style="text-align: center;">
+  <button class="btn btn-info adddept"> <a [routerLink]="['/speaker','add']" > Add speaker</a></button>
+<table class="table table-bordered table-hover table-stripped" *ngIf="speaker.length>0">
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>address</th>
+          <th>email</th>
+          <!-- <th>password</th> -->
+          <th>role</th>
+          <!-- <th>image</th> -->
+          <th>operate</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of speaker">
+          <td>{{item._id}}</td>
+          <td>{{item.fullName }}</td>
+          <td>{{item.address}}</td>
+          <td>{{item.email}}</td>
+          <!-- <td>{{item.password}}</td> -->
+          <td>{{item.role}}</td>
+          <!-- <br> -->
+         <!-- <td style="display: block;"><img src="{{item.image}}"
+            width="100"
+            height="100"
+            style="border-radius: 50%;" alt="">
+            </td> -->
+
+          <td>
+          <button class="btn btn-danger"> <a [routerLink]="['/speaker','delete',item._id]" > Delete</a></button>
+          |<button class="btn btn-primary"> <a [routerLink]="['/speaker','details',item._id]" > Details</a></button>
+          |<button class="btn btn-success"> <a [routerLink]="['/speaker','edit',item._id]" > Edit</a></button>
+
+           </td>
+      </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>
+</div>
+<!-- <app-delete-speaker [speakerId]="deleteId" ></app-delete-speaker>
+<app-details-speaker [speakerId]="detailsId" ></app-details-speaker>
+<app-edit-speaker [speakerId]="editId" ></app-edit-speaker> -->
+</div>

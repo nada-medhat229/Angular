@@ -1,0 +1,23 @@
+<div>
+
+  <label>fullName :</label>
+  <input type="text" [(ngModel)]="student.fullName" >
+  <label >email :</label>
+  <input type="email"[(ngModel)]="student.email" >
+  <label >password :</label>
+  <input type="password"[(ngModel)]="student.password" >
+  <label>Department :</label>
+  <select [(ngModel)]="student.department">
+    <option [value]="item._id" *ngFor="let item of department">{{item.name}}</option>
+  </select>
+
+  <label >image :</label>
+  <input type="file" (input)="onFileChange($event)" [(ngModel)]="student.image">
+
+
+
+  <button class="btn btn-info" (click)="add()">add</button>
+
+  <!-- <button class="btn btn-info" (click)="show()">show</button> -->
+  </div>
+

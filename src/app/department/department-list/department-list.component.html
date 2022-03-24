@@ -1,0 +1,35 @@
+<div class="container">
+  <div style="text-align: center;">
+
+    <button class="btn btn-info adddept"> <a [routerLink]="['/department','add']" > Add Department</a></button>
+<!-- <app-department-add></app-department-add> -->
+<table class="table table-bordered table-hover table-stripped" *ngIf="depts.length>0">
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>operator</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of depts">
+          <td>{{item._id}}</td>
+          <td>{{item.name }}</td>
+          <td>{{item.location}}</td>
+          <td>
+          <!-- <button  class="btn btn-danger"  (click)="deleteId=item._id"> Delete</button> -->
+          <button class="btn btn-danger"> <a [routerLink]="['/department','delete',item._id]" > Delete</a></button>
+          |<button class="btn btn-primary"> <a [routerLink]="['/department','details',item._id]" > Details</a></button>
+          |<button class="btn btn-success"> <a [routerLink]="['/department','edit',item._id]" > Edit</a></button>
+          <!-- |<button  class="btn btn-primary" (click)="detailsId=item._id"> Details</button> -->
+          <!-- |<button  class="btn btn-success" (click)="editId=item._id"> </button> -->
+           </td>
+      </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>
+<!-- <app-department-delete [deptId]="deleteId" ></app-department-delete >
+<app-department-details [deptId]="detailsId"></app-department-details>
+<app-department-edit [deptId]="editId"></app-department-edit> -->
+</div></div>

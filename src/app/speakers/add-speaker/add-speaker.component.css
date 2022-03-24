@@ -1,0 +1,17 @@
+form{
+  padding: 10px;
+    display: flex;
+
+  flex-direction: column;
+}
+.btn{
+margin-top: 10px;
+}
+input.ng-valid.ng-touched{
+  border: solid 1px blue;
+}
+
+input.ng-invalid.ng-touched{
+  border: solid 1px red;
+  color: red;
+}
